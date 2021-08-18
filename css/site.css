@@ -87,4 +87,5 @@ main > .container {
 
 #alert {
 	background-color: var(--secondary-color);
+	color: white;
 }
