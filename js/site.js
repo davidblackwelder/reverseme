@@ -29,9 +29,7 @@ function reverseString(userString) {
 // view function
 function displayReversedString(revString) {
 	// write to the page
-	document.getElementById(
-		"msg"
-	).innerHTML = `Your string reversed is: ${revString}`;
+	document.getElementById("msg").innerHTML = `${revString}`;
 	// show the alert box
 	document.getElementById("alert").classList.remove("invisible");
 }
