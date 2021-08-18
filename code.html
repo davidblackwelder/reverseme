@@ -97,8 +97,12 @@
                 function getUserString() {
                   document.getElementById("alert").classList.add("invisible");
                   let userString = document.getElementById("userString").value;
-                  let revString = reverseString(userString);
-                  displayReversedString(revString);
+                  if (userString.length > 1) {
+                    let revString = reverseString(userString);
+                    displayReversedString(revString);
+                  } else {
+                    alert("You must enter at least 2 characters to have it reversed!");
+                  }
                 }
 
                 // Reverse the string
@@ -134,10 +138,12 @@
 						<p>
 							The getUserString function is responsible for getting the value
 							from the page when the button is clicked. This function will also
-							add the class "invisible" to the element with a class of "alert"
-							to ensure the message doesn't appear until the button is clicked.
-							The other two functions are also called within this controller
-							function.
+							add the class "invisible" to the div element with a class of
+							"alert" to ensure the message doesn't appear until the button is
+							clicked. The other two functions are also called within this
+							controller function. I also accounted for the cases when the user
+							doesn't enter anything at all or only enters one character which
+							cannot be reversed.
 						</p>
 						<h5>reverseString</h5>
 						<p>

@@ -89,3 +89,7 @@ main > .container {
 	background-color: var(--secondary-color);
 	color: white;
 }
+
+#msg {
+	word-wrap: break-word;
+}

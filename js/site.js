@@ -3,8 +3,13 @@
 function getUserString() {
 	document.getElementById("alert").classList.add("invisible");
 	let userString = document.getElementById("userString").value;
-	let revString = reverseString(userString);
-	displayReversedString(revString);
+
+	if (userString.length > 1) {
+		let revString = reverseString(userString);
+		displayReversedString(revString);
+	} else {
+		alert("You must enter at least 2 characters to have it reversed!");
+	}
 }
 
 // Reverse the string
