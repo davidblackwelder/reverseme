@@ -92,19 +92,64 @@
 					<div class="col-lg-8">
 						<pre class="line-numbers">
               <code class="language-javascript">
-                // Call Hello World
-                function helloWorld() {
-                  alert("hello world");
+                // Get the string from the page
+                // controller function
+                function getUserString() {
+                  document.getElementById("alert").classList.add("invisible");
+                  let userString = document.getElementById("userString").value;
+                  let revString = reverseString(userString);
+                  displayReversedString(revString);
                 }
+
+                // Reverse the string
+                // logic function
+                function reverseString(userString) {
+                  let revString = [];
+
+                  // reverse a string using a for loop
+                  for (let index = userString.length - 1; index >= 0; index--) {
+                    revString += userString[index];
+                  }
+
+                  return revString;
+                }
+
+                // Display the reversed string to the user
+                // view function
+                function displayReversedString(revString) {
+                  // write to the page
+                  document.getElementById(
+                    "msg"
+                  ).innerHTML = `Your string reversed is: ${revString}`;
+                  // show the alert box
+                  document.getElementById("alert").classList.remove("invisible");
+                }
+
               </code>
             </pre>
 					</div>
 					<div class="col-lg-4">
-						<p>The code is structured in one function.</p>
-						<h5>Hello World</h5>
+						<p>The code is structured into three functions.</p>
+						<h5>getUserString</h5>
 						<p>
-							Hello World is a function that displays an alert with the message
-							of "Hello World"
+							The getUserString function is responsible for getting the value
+							from the page when the button is clicked. This function will also
+							add the class "invisible" to the element with a class of "alert"
+							to ensure the message doesn't appear until the button is clicked.
+							The other two functions are also called within this controller
+							function.
+						</p>
+						<h5>reverseString</h5>
+						<p>
+							This function takes in the userString from the getUserString
+							function and reverses the string using a for a loop and returning
+							the result in an array.
+						</p>
+						<h5>displayReversedString</h5>
+						<p>
+							This function takes in the revString array from the reverseString
+							function and adds this string to the Dom. This function also
+							removes the "invisible" class so the message appears on the page.
 						</p>
 					</div>
 				</div>
